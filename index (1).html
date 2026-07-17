@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puvanesh Venkidusamy — Senior Researcher, Talent Acquisition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B0912;
+    --ink-2:#15111F;
+    --ink-3:#1F182E;
+    --gold:#8B5CF6;
+    --gold-soft:#C4B5FD;
+    --sage:#B073D9;
+    --text:#ECE8F7;
+    --text-dim:#A79EC0;
+    --line:rgba(236,232,247,0.12);
+    --line-strong:rgba(236,232,247,0.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:12px;
+    color:var(--gold-soft);
+  }
+  h1,h2,h3{font-family:'Fraunces', serif;font-weight:600;letter-spacing:-0.01em;}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(15,24,38,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1080px;margin:0 auto;padding:18px 32px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .monogram{
+    width:38px;height:38px;border:1px solid var(--line-strong);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:700;font-size:15px;color:var(--gold-soft);
+    flex-shrink:0;
+  }
+  .nav-links{display:flex;gap:28px;font-size:13px;font-family:'IBM Plex Mono',monospace;letter-spacing:0.04em;}
+  .nav-links a{color:var(--text-dim);transition:color .2s;position:relative;}
+  .nav-links a:hover, .nav-links a:focus-visible{color:var(--gold-soft);}
+  .nav-links a:focus-visible{outline:1px solid var(--gold-soft);outline-offset:4px;}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative;
+    padding:170px 0 120px;
+    overflow:hidden;
+  }
+  #network-canvas{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    opacity:0.55;
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:2;}
+  .hero h1{
+    font-size:clamp(42px, 7vw, 76px);
+    line-height:1.03;
+    margin:16px 0 6px;
+    color:var(--text);
+  }
+  .hero .role{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+    font-size:clamp(18px,2.4vw,24px);
+    color:var(--sage);
+    margin-bottom:26px;
+  }
+  .hero p.lede{
+    max-width:560px;
+    color:var(--text-dim);
+    font-size:16.5px;
+    margin-bottom:40px;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:64px;}
+  .btn{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;letter-spacing:0.03em;
+    padding:13px 24px;border-radius:2px;
+    border:1px solid var(--line-strong);
+    transition:all .2s ease;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn-primary{background:var(--gold);color:var(--ink);border-color:var(--gold);font-weight:600;}
+  .btn-primary:hover{background:var(--gold-soft);border-color:var(--gold-soft);}
+  .btn-ghost{color:var(--text);}
+  .btn-ghost:hover{border-color:var(--gold-soft);color:var(--gold-soft);}
+
+  /* ---------- PIPELINE (signature element) ---------- */
+  .pipeline{
+    border:1px solid var(--line);
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    border-radius:4px;
+    padding:26px 28px 22px;
+    max-width:760px;
+  }
+  .pipeline-label{
+    display:flex;justify-content:space-between;align-items:baseline;
+    margin-bottom:16px;flex-wrap:wrap;gap:8px;
+  }
+  .pipeline-label .name{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-dim);letter-spacing:0.08em;text-transform:uppercase;}
+  .pipeline-label .stat{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-soft);}
+  .pipeline-track{
+    position:relative;height:34px;
+    background:var(--ink-2);
+    border-radius:2px;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .pipeline-fill{
+    position:absolute;top:0;left:0;bottom:0;
+    width:0%;
+    background:linear-gradient(90deg, var(--sage), var(--gold));
+    transition:width 1.6s cubic-bezier(.2,.8,.2,1);
+  }
+  .pipeline-fill.filled{width:70%;}
+  .pipeline-stages{
+    display:grid;grid-template-columns:repeat(5,1fr);
+    margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+    color:var(--text-dim);letter-spacing:0.04em;
+  }
+  .pipeline-stages span{text-transform:uppercase;}
+  .pipeline-stages span:nth-child(1){color:var(--sage);}
+  .pipeline-stages span:last-child{color:var(--gold-soft);text-align:right;}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:96px 0;border-top:1px solid var(--line);}
+  .section-head{display:flex;align-items:baseline;gap:16px;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(28px,4vw,38px);}
+  .section-head .eyebrow{white-space:nowrap;}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:64px;}
+  .about-grid p{color:var(--text-dim);font-size:16px;margin-bottom:18px;max-width:520px;}
+  .fact-list{border-left:1px solid var(--line-strong);padding-left:24px;}
+  .fact{padding:14px 0;border-bottom:1px solid var(--line);}
+  .fact:last-child{border-bottom:none;}
+  .fact .k{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-dim);margin-bottom:4px;}
+  .fact .v{font-family:'Fraunces',serif;font-size:17px;color:var(--text);}
+
+  /* Timeline */
+  .timeline{position:relative;padding-left:40px;}
+  .timeline::before{
+    content:'';position:absolute;left:6px;top:6px;bottom:6px;width:1px;
+    background:var(--line-strong);
+  }
+  .tl-item{position:relative;margin-bottom:56px;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-item::before{
+    content:'';position:absolute;left:-40px;top:6px;width:13px;height:13px;
+    border-radius:50%;background:var(--ink);border:2px solid var(--gold);
+  }
+  .tl-meta{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--sage);
+    text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;
+  }
+  .tl-item h3{font-size:22px;margin-bottom:2px;}
+  .tl-item .org{color:var(--text-dim);font-size:14px;margin-bottom:16px;}
+  .tl-item ul{list-style:none;max-width:640px;}
+  .tl-item li{
+    position:relative;padding-left:20px;margin-bottom:10px;
+    color:var(--text-dim);font-size:15px;
+  }
+  .tl-item li::before{
+    content:'—';position:absolute;left:0;color:var(--gold-soft);
+  }
+
+  /* Impact stats */
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .stat-card{background:var(--ink);padding:32px 24px;}
+  .stat-card .num{font-family:'Fraunces',serif;font-size:clamp(32px,4vw,44px);color:var(--gold-soft);line-height:1;margin-bottom:10px;}
+  .stat-card .label{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-dim);letter-spacing:0.03em;}
+
+  /* Skills */
+  .skill-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+  .skill-col h4{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;
+    letter-spacing:0.1em;color:var(--sage);margin-bottom:18px;
+  }
+  .pill{
+    display:inline-block;padding:8px 14px;margin:0 8px 8px 0;
+    border:1px solid var(--line-strong);border-radius:2px;
+    font-size:13.5px;color:var(--text);
+  }
+
+  /* Certificates & Languages */
+  .cert-lang-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;}
+  .cert-row{
+    display:flex;justify-content:space-between;padding:14px 0;
+    border-bottom:1px solid var(--line);font-size:14.5px;
+    gap:16px;
+  }
+  .cert-row .cert-name{color:var(--text);}
+  .cert-row .cert-issuer{color:var(--text-dim);font-family:'IBM Plex Mono',monospace;font-size:12px;text-align:right;}
+  .lang-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);}
+  .lang-row .lv{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text-dim);text-transform:uppercase;}
+  .badge{
+    display:inline-block;margin-top:24px;padding:14px 18px;
+    border-left:2px solid var(--gold);background:rgba(139,92,246,0.08);
+    font-size:13.5px;color:var(--text-dim);
+  }
+
+  /* Contact / Footer */
+  footer{
+    padding:100px 0 60px;
+    text-align:center;
+  }
+  footer .eyebrow{display:block;margin-bottom:18px;}
+  footer h2{font-size:clamp(30px,5vw,52px);margin-bottom:28px;}
+  .contact-links{
+    display:flex;justify-content:center;gap:32px;flex-wrap:wrap;
+    margin-bottom:70px;font-family:'IBM Plex Mono',monospace;font-size:14px;
+  }
+  .contact-links a{
+    display:flex;align-items:center;gap:8px;color:var(--text-dim);
+    border-bottom:1px solid transparent;padding-bottom:2px;transition:.2s;
+  }
+  .contact-links a:hover, .contact-links a:focus-visible{color:var(--gold-soft);border-color:var(--gold-soft);}
+  .foot-bottom{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--text-dim);
+    letter-spacing:0.04em;
+  }
+
+  /* Reveal on scroll */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* Responsive */
+  @media (max-width: 860px){
+    .about-grid, .cert-lang-grid{grid-template-columns:1fr;gap:40px;}
+    .stat-grid{grid-template-columns:repeat(2,1fr);}
+    .skill-cols{grid-template-columns:1fr;}
+    .pipeline-stages{font-size:9px;}
+  }
+  @media (max-width: 600px){
+    .wrap{padding:0 20px;}
+    .nav-links{display:none;}
+    header.hero{padding:130px 0 80px;}
+    .stat-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="monogram">PV</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#impact">Impact</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="hero">
+  <canvas id="network-canvas"></canvas>
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Talent Acquisition &amp; Strategic Recruitment Planning</p>
+    <h1>Puvanesh<br>Venkidusamy</h1>
+    <p class="role">Senior Researcher, HR — Niche &amp; Leadership Hiring</p>
+    <p class="lede">I map talent before the market knows it's moving — building pipelines for niche and leadership roles across fintech, SaaS, EV, aerospace, and enterprise tech, then closing them with data behind every decision.</p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="mailto:puvaneshvenkidusamy@gmail.com">Email Me</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/puvanesh-venkidusamy" target="_blank" rel="noopener">View LinkedIn</a>
+      <a class="btn btn-ghost" href="#experience">See Track Record</a>
+    </div>
+
+    <div class="pipeline">
+      <div class="pipeline-label">
+        <span class="name">Offer-to-Join Ratio, Senior &amp; Niche Roles</span>
+        <span class="stat">~70%</span>
+      </div>
+      <div class="pipeline-track">
+        <div class="pipeline-fill" id="pipelineFill"></div>
+      </div>
+      <div class="pipeline-stages">
+        <span>Sourced</span><span>Screened</span><span>Interviewed</span><span>Offer</span><span>Joined</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">01</span>
+      <h2>Who I Am</h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>I'm a talent acquisition specialist with 3.5 years focused on niche and leadership hiring — sourcing and placing candidates in specialized roles across fintech, SaaS, EV, aerospace, and enterprise domains.</p>
+        <p>My approach is data-driven: I track Time to Hire and Cost per Hire as design constraints, not afterthoughts, and I build relationships with candidates and hiring teams that hold up under a 22-year-experience search as well as a 2-year one.</p>
+        <p>Currently leading talent mapping and market research for Amazon hiring projects across North America and Europe, identifying passive candidates inside target engineering organizations.</p>
+      </div>
+      <div class="fact-list reveal">
+        <div class="fact"><div class="k">Location</div><div class="v">Bangalore, India</div></div>
+        <div class="fact"><div class="k">Experience</div><div class="v">3.5 Years</div></div>
+        <div class="fact"><div class="k">Education</div><div class="v">MBA, HR &amp; Finance</div></div>
+        <div class="fact"><div class="k">Languages</div><div class="v">English, Tamil</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">02</span>
+      <h2>Where I've Worked</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-meta">Mar 2026 — Present</div>
+        <h3>Junior Research Consultant</h3>
+        <div class="org">LongHouse</div>
+        <ul>
+          <li>Led talent mapping and market research for Amazon hiring projects across North America and Europe.</li>
+          <li>Evaluated candidates on technical expertise, career progression, domain specialization, and client fit.</li>
+          <li>Built high-quality pipelines using LinkedIn Recruiter, professional networks, and market intelligence tools.</li>
+          <li>Mapped engineering organizations to identify passive candidates at target companies.</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-meta">Jun 2022 — Feb 2026 · Bangalore</div>
+        <h3>Senior Researcher (HR)</h3>
+        <div class="org">e-Hireo</div>
+        <ul>
+          <li>Delivered 21 successful niche and leadership hires across fintech, SaaS, EV, aerospace, and enterprise.</li>
+          <li>Maintained a ~70% offer-to-join ratio for senior and niche roles by aligning expectations early.</li>
+          <li>Designed strategic hiring tailored to Time to Hire and Cost per Hire targets.</li>
+          <li>Hired talent spanning 2 to 22 years of experience — individual contributors through leadership.</li>
+          <li>Ran talent mapping and headhunting via LinkedIn Recruiter, Naukri, Bigshyft, and Instahyre.</li>
+          <li>Played a key role in team building and skill development, shaping a positive working culture.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="impact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">03</span>
+      <h2>Track Record, in Numbers</h2>
+    </div>
+    <div class="stat-grid reveal">
+      <div class="stat-card"><div class="num">21</div><div class="label">Niche &amp; Leadership Hires</div></div>
+      <div class="stat-card"><div class="num">~70%</div><div class="label">Offer-to-Join Ratio</div></div>
+      <div class="stat-card"><div class="num">2–22</div><div class="label">Years' Experience Hired For</div></div>
+      <div class="stat-card"><div class="num">2×</div><div class="label">Employee of the Quarter</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">04</span>
+      <h2>How I Work</h2>
+    </div>
+    <div class="skill-cols">
+      <div class="skill-col reveal">
+        <h4>Sourcing &amp; Mapping</h4>
+        <div class="pill">Niche Talent Acquisition</div>
+        <div class="pill">HeadHunting</div>
+        <div class="pill">Product Hiring</div>
+      </div>
+      <div class="skill-col reveal">
+        <h4>Strategy &amp; Data</h4>
+        <div class="pill">Data-driven Recruitment</div>
+        <div class="pill">Strategic Recruitment Planning</div>
+      </div>
+      <div class="skill-col reveal">
+        <h4>People &amp; Culture</h4>
+        <div class="pill">Relationship Building</div>
+        <div class="pill">Team Building</div>
+        <div class="pill">Skill Development</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">05</span>
+      <h2>Certificates &amp; Languages</h2>
+    </div>
+    <div class="cert-lang-grid">
+      <div class="reveal">
+        <div class="cert-row"><span class="cert-name">Talent Sourcing Fundamentals</span><span class="cert-issuer">Instahyre</span></div>
+        <div class="cert-row"><span class="cert-name">Agilitics</span><span class="cert-issuer">hirist.tech</span></div>
+        <div class="cert-row"><span class="cert-name">Naukri Maestro</span><span class="cert-issuer">Naukri Tech</span></div>
+        <div class="cert-row"><span class="cert-name">Recruiter</span><span class="cert-issuer">hirist.tech</span></div>
+        <div class="cert-row"><span class="cert-name">HR Analytics</span><span class="cert-issuer">Great Learning</span></div>
+        <div class="cert-row"><span class="cert-name">Excel with LinkedIn Recruiter Assessment</span><span class="cert-issuer">LinkedIn</span></div>
+      </div>
+      <div class="reveal">
+        <div class="lang-row"><span>English</span><span class="lv">Native / Bilingual</span></div>
+        <div class="lang-row"><span>Tamil</span><span class="lv">Native / Bilingual</span></div>
+        <div class="badge">Master in Business Administration — HR &amp; Finance<br>Sree Amman Institute of Management and Research, 2018–2020</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <span class="eyebrow">06 / Get In Touch</span>
+    <h2>Let's find your<br>next great hire.</h2>
+    <div class="contact-links">
+      <a href="mailto:puvaneshvenkidusamy@gmail.com">✉ puvaneshvenkidusamy@gmail.com</a>
+      <a href="tel:+916383136651">☎ +91 63831 36651</a>
+      <a href="https://linkedin.com/in/puvanesh-venkidusamy" target="_blank" rel="noopener">in linkedin.com/in/puvanesh-venkidusamy</a>
+      <span>📍 Bangalore, India</span>
+    </div>
+    <div class="foot-bottom">Puvanesh Venkidusamy © 2026 — Built for the next role.</div>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  // Pipeline fill animation
+  const fillEl = document.getElementById('pipelineFill');
+  const pipelineObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ fillEl.classList.add('filled'); pipelineObserver.disconnect(); }
+    });
+  },{threshold:0.4});
+  pipelineObserver.observe(fillEl);
+
+  // Talent-network canvas: nodes drifting and connecting, evoking a candidate map
+  const canvas = document.getElementById('network-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, nodes = [];
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resize(){
+    const hero = document.querySelector('.hero');
+    W = canvas.width = hero.offsetWidth;
+    H = canvas.height = hero.offsetHeight;
+  }
+  function initNodes(){
+    const count = W < 700 ? 26 : 46;
+    nodes = Array.from({length:count}, ()=>({
+      x: Math.random()*W,
+      y: Math.random()*H,
+      vx: (Math.random()-0.5)*0.18,
+      vy: (Math.random()-0.5)*0.18,
+      r: Math.random()*1.6+1
+    }));
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(let i=0;i<nodes.length;i++){
+      const n = nodes[i];
+      if(!reduceMotion){
+        n.x += n.vx; n.y += n.vy;
+        if(n.x<0||n.x>W) n.vx*=-1;
+        if(n.y<0||n.y>H) n.vy*=-1;
+      }
+      for(let j=i+1;j<nodes.length;j++){
+        const m = nodes[j];
+        const dx=n.x-m.x, dy=n.y-m.y;
+        const dist = Math.sqrt(dx*dx+dy*dy);
+        if(dist < 130){
+          ctx.strokeStyle = `rgba(139,92,246,${0.16*(1-dist/130)})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(n.x,n.y);
+          ctx.lineTo(m.x,m.y);
+          ctx.stroke();
+        }
+      }
+    }
+    for(const n of nodes){
+      ctx.fillStyle = 'rgba(196,181,253,0.6)';
+      ctx.beginPath();
+      ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+      ctx.fill();
+    }
+    if(!reduceMotion) requestAnimationFrame(draw);
+  }
+  resize(); initNodes(); draw();
+  window.addEventListener('resize', ()=>{ resize(); initNodes(); });
+</script>
+
+</body>
+</html>
